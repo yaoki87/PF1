@@ -1,24 +1,42 @@
-# README
+# <Muse>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+<美容院の予約・予約の管理ができるサイト>
 
-* Ruby version
+### サイトテーマ
 
-* System dependencies
+<美容院の予約>
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+<親戚で美容院を経営している人がいて、予約は基本電話で受け付けて紙に書いて管理しているが、ヘアカットの最中に電話がかかってきたり外に出ている際に予約が確認できなかったりと不便なことが多いので少しでも改善してあげたいと感じてこのテーマにしました。>
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+<美容院の公式 LINE を追加してもらっている人>
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+<美容院の予約をしようとした際に電話をかけなくても公式 LINE から web サイトに飛んでもらって予約を行えるようにします。>
 
-* ...
+## 設計書
+
+<...>
+
+## チャレンジ要素一覧
+
+<https://docs.google.com/spreadsheets/d/13VNOqZ-d-i588N62Pzoo2NkB9r9N6nkcV53np3RNRPg/edit#gid=0>
+
+## 開発環境
+
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。
+- 使用しない場合は、使用素材の項目を README から削除してください。
