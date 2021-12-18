@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col">
+    <h2>予約詳細</h2>
+  </div>
+  <div class="col">
+    <table class="table">
+      <div class="row">
+        <thead>
+          <tr>
+            <th scope="col">予約日</th>
+            <th scope="col">名前</th>
+            <th scope="col">メニュー</th>
+            <th scope="col">LINE or 電話番号</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+              <th><%= @reservation.start_date %></th>
+              <th><%= @reservation.name %></th>
+              <th><%= @reservation.menu_id %></th>
+              <th><%= @reservation.userinfo %></th>
+            </tr>
+
+        </tbody>
+      </div>
+    </table>
+  </div>
+</div>
