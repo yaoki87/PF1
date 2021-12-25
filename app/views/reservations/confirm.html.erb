@@ -1,7 +1,7 @@
     <h4>予約日時</h4>
     <%= @reservation.start_date %>
     <h4>予約メニュー</h4>
-    <%= @reservation.menu_id %>
+    <%= @reservation.menu %>
     <h4>お名前</h4>
     <%= @reservation.name %>
     <h4>返信用LINE名orお電話番号</h4>
@@ -9,7 +9,7 @@
 
 <%= form_with model: @reservation, local:true do |f| %>
   <%= f.hidden_field :start_date %>
-	<%= f.hidden_field :menu_id %>
+	<%= f.hidden_field :menu %>
 	<%= f.hidden_field :name %>
 	<%= f.hidden_field :userinfo %>
   <%= f.submit '予約を確定する' %>

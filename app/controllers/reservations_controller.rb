@@ -1,20 +1,30 @@
 class ReservationsController < ApplicationController
+#before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :show, :edit, :calender]
 
   def new_date
   end
 
   def new_main
-    @reservation = Reservation.new
+    date = params[:date].split(" ")[2]
+    month =  params[:month]
+    year = params[:date].split(" ")[3]
+    @date = year + "年" + month + "月" + date + "日"
+    @reservation = Reservation.new(start_date: params[:date])
   end
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-
+    unless @reservation.valid?
+      @date = params[:date]
+      render :new_main
+    else
+      render :confirm
+    end
   end
 
   def create
     reservation = Reservation.new(reservation_params)
-    reservation.save
+    reservation.save!
     redirect_to thanx_reservations_path
   end
 
@@ -22,7 +32,8 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservation = Reservation.all
+    @reservation_new = Reservation.where(check: "false")
+    @reservation_confirmed = Reservation.where(check: "true")
   end
 
   def show
@@ -39,9 +50,19 @@ class ReservationsController < ApplicationController
     redirect_to action: :show
   end
 
+  def destroy
+    reservation = Reservation.find(params[:id])
+    reservation.destroy
+    redirect_to action: :index
+  end
+
+  def calender
+
+  end
+
   private
     def reservation_params
-     params.require(:reservation).permit(:menu_id, :start_date, :name, :userinfo)
+     params.require(:reservation).permit(:menu, :treatment, :start_date, :name, :userinfo, :end_date, :check)
     end
 
 end

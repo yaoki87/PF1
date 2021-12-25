@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 2021_12_14_153919) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "menu_id"
+    t.string "menu", null: false
+    t.boolean "treatment", default: false
     t.string "name", null: false
     t.datetime "start_date", null: false
     t.datetime "end_date"
