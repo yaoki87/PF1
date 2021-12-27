@@ -73,7 +73,7 @@ $(function () {
 
                 dayClick: function (day) {
 
-                  window.location.href = `/reservations/new_main?date=${day._d}&month=${day.month() + 1}`;
+                  window.location.href = '/reservations/new_main?date=${day._d}&month=${day.month() + 1}';
 
                 },
 
