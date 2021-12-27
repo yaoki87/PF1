@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/admin/sign_up', controller: 'application', action: 'render_404'
   #管理者ログイン
   devise_for :admins
-
   #トップページ
   root "homes#top"
 

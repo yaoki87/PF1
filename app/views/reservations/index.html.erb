@@ -18,11 +18,11 @@
         <tbody>
           <% @reservation_new.each do |reservation| %>
             <tr>
-              <th><%= reservation.start_date %></th>
+              <th><%= reservation.start_date.strftime("%Y年 %m月 %d日 %H:%M") %></th>
               <th><%= reservation.name %></th>
-              <th><%= reservation.menu_id %></th>
+              <th><%= reservation.menu %></th>
               <th><%= reservation.userinfo %></th>
-              <th><%= link_to "編集", edit_reservation_path(reservation.id) %><th>
+              <th><%= link_to "確認", edit_reservation_path(reservation.id) %><th>
               <th><%= link_to "削除", reservation_path(reservation.id), method: :delete %><th>
             </tr>
           <% end %>
@@ -50,9 +50,9 @@
         <tbody>
           <% @reservation_confirmed.each do |reservation| %>
             <tr>
-              <th><%= reservation.start_date %></th>
+              <th><%= reservation.start_date.strftime("%Y年 %m月 %d日 %H:%M") %> - <%= reservation.end_date.strftime("%H:%M") %></th>
               <th><%= reservation.name %></th>
-              <th><%= reservation.menu_id %></th>
+              <th><%= reservation.menu %></th>
               <th><%= reservation.userinfo %></th>
               <th><%= link_to "編集", edit_reservation_path(reservation.id) %><th>
               <th><%= link_to "削除", reservation_path(reservation.id), method: :delete %><th>

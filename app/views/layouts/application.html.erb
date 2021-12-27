@@ -13,21 +13,30 @@
     <div class="container">
       <div class="row">
         <div class="col position-absolute.top-0.start-0">
-          <div ><%= image_tag  'muse_kamban.jpg', size: "300x120" %></div>
+          <div ><%=link_to image_tag("muse_kamban.jpg"), "/admins/sign_in",  size: "300x120"%></div>
         </div>
         <div class="col d-flex align-items-center">
           <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-            <li>
-            <%= link_to 'Home', root_path, class: 'text-dark p-3' %>
-            </li>
+            <% if admin_signed_in? %>
+              <li>
+              <%= link_to 'Index', reservations_path, class: 'text-dark p-3' %>
+              </li>
+              <li>
+                <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'text-dark p-3' %>
+              </li>
+            <% else %>
+              <li>
+              <%= link_to 'Home', root_path, class: 'text-dark p-3' %>
+              </li>
 
-            <li>
-              <%= link_to "Menu", menu_path, class: 'text-dark p-3' %>
-            </li>
+              <li>
+                <%= link_to "Menu", menu_path, class: 'text-dark p-3' %>
+              </li>
 
-            <li>
-              <%= link_to 'Reservation', new_date_reservations_path, class: 'text-dark p-3' %>
-            </li>
+              <li>
+                <%= link_to 'Reservation', new_date_reservations_path, class: 'text-dark p-3' %>
+              </li>
+            <% end %>
           </nav>
         </div>
 
@@ -46,7 +55,7 @@
       <div class="col">
         <h4>INFO</h4>
         <div class="txt">
-          <p class="add">〒380-0834<br>長野市問御所町1170-17<br>TOIGOパーキング1F<br>TEL：026-217-7173</p>
+          <p class="add">〒XXX-XXX<br>XX市XXX町XX-XX<br>TEL：XXX-XXX-XXXX</p>
         </div>
       </div>
       <div class="col">

@@ -33,7 +33,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservation_new = Reservation.where(check: "false")
-    @reservation_confirmed = Reservation.where(check: "true")
+    @reservation_confirmed = Reservation.where(check: "true").order(start_date: :asc)
   end
 
   def show

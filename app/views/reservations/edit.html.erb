@@ -1,16 +1,21 @@
-<!-- form_with部分 -->
-<%= form_with model: @reservation, url: reservation_path , method: :patch, local:true do |f| %>
-  <h4>予約日時</h4>
-  <%= f.text_field :start_date %>
-  <h4>終了予定時刻</h4>
-  <%= f.text_field :end_date %>
-  <h4>予約メニュー</h4>
-  <%= f.text_field :menu_id %>
-  <h4>お名前</h4>
-  <%= f.text_field :name %>
-  <h4>返信用LINE名orお電話番号</h4>
-  <%= f.text_field :userinfo %><br>
-  <%= f.check_box :check, {} , true, false %>
-  <%= label_tag :check, "予約の確認をした" %><br>
-  <%= f.submit '次へ' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col"><!-- form_with部分 -->
+      <%= form_with model: @reservation, url: reservation_path , method: :patch, local:true do |f| %>
+        <h4>予約日時</h4>
+        <%= f.text_field :start_date %>
+        <h4>終了予定時刻</h4>
+        <%= f.text_field :end_date %>
+        <h4>予約メニュー</h4>
+        <%= f.text_field :menu %>
+        <h4>お名前</h4>
+        <%= f.text_field :name %>
+        <h4>返信用LINE名orお電話番号</h4>
+        <%= f.text_field :userinfo %><br>
+        <%= f.check_box :check, {} , true, false %>
+        <%= label_tag :check, "予約の確認をした" %><br>
+        <%= f.submit '次へ' %>
+      <% end %>
+    </div>
+  </div>
+</div>
