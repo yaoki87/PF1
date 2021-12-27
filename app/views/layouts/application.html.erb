@@ -13,8 +13,9 @@
     <div class="container">
       <div class="row">
         <div class="col position-absolute.top-0.start-0">
-          <div ><%=link_to new_admin_session_path do%>
-              <%= image_tag asset_path('muse_kamban.jpg'),size: "300x150" %>
+          <div><%=link_to new_admin_session_path, class: "text-dark h1" do%>
+              Muse
+              <%#= image_tag asset_path('muse_kamban.jpg'),size: "300x150" %>
               <% end %>
           </div>
         </div>
@@ -44,7 +45,7 @@
         </div>
 
       </div>
-      <div class="row d-flex align-items-start"><%= image_tag  asset_path('sozai1.jpg'), size: "1000x80" %></div>
+      <!--<div class="row d-flex align-items-start"><%#= image_tag  asset_path('sozai1.jpg'), size: "1000x80" %></div>-->
     </div>
   </header>
 
