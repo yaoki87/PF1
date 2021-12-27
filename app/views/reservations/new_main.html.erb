@@ -9,7 +9,7 @@
 
       <!-- form_with部分 -->
       <h4><%= @date %><h4>
-      <%= form_with model: @reservation, url: confirm_reservations_path, method: :get, local:true do |f| %>
+      <%= form_with model: @reservation, url: confirm_reservations_path, method: :post, local:true do |f| %>
       <div class="form-group">
         <%= f.label :start_date, '予約時間' %>
         <%= f.datetime_select :start_date, use_month_numbers: true, minute_step: 30, start_time: 9, end_time: 19,  class: 'form-control' , required: true  %>
