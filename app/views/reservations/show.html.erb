@@ -16,10 +16,14 @@
         <tbody>
 
             <tr>
-              <th><%= @reservation.start_date.strftime("%Y年 %m月 %d日 %H:%M") %> - <%= @reservation.end_date.strftime("%H:%M") %></th>
-              <th><%= @reservation.name %></th>
-              <th><%= @reservation.menu %></th>
-              <th><%= @reservation.userinfo %></th>
+              <th><%#= @reservation.start_date.strftime("%Y年 %m月 %d日 %H:%M") %> - <%= @reservation.end_date.strftime("%H:%M") %></th>
+              <th><%#= @reservation.name %></th>
+              <th>
+                <%#= @reservation.menu %>
+                
+              </th>
+              <th><%#= @reservation.userinfo %></th>
+              
             </tr>
 
         </tbody>
