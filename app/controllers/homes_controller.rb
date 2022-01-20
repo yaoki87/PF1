@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-#before_action :authenticate_admin!,except: [:top, :menu]
+before_action :authenticate_admin!,except: [:top, :menu]
 
   def top
   end

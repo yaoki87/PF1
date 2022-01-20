@@ -7,7 +7,9 @@
         <h4>終了予定時刻</h4>
         <%= f.text_field :end_date %>
         <h4>予約メニュー</h4>
-        <%= f.text_field :menu %>
+        <%= f.text_field :menu %><br>
+        <%= f.check_box :treatment, {} , true, false %>
+        <%= f.label :treatment, "トリートメントを追加する" %>
         <h4>お名前</h4>
         <%= f.text_field :name %>
         <h4>返信用LINE名orお電話番号</h4>

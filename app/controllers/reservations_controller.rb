@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-#before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :show, :edit, :calender]
+before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :thanx, :show, :calender]
 
   def new_date
   end

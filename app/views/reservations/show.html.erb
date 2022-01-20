@@ -19,11 +19,15 @@
               <th><%= @reservation.start_date.strftime("%Y年 %m月 %d日 %H:%M") %> - <%= @reservation.end_date.strftime("%H:%M") %></th>
               <th><%= @reservation.name %></th>
               <th>
-                <%= @reservation.menu %>
-                
+                <%= @reservation.menu %><br>
+                <% if @reservation.treatment == true %>
+                  トリートメントあり
+                <% else %>
+                  トリートメントなし
+                <% end %>
               </th>
               <th><%= @reservation.userinfo %></th>
-              
+
             </tr>
 
         </tbody>
