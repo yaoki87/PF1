@@ -42,6 +42,7 @@ before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :tha
 
   def edit
     @reservation = Reservation.find(params[:id])
+
   end
 
   def update
