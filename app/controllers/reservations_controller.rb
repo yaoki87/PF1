@@ -42,7 +42,9 @@ before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :tha
 
   def edit
     @reservation = Reservation.find(params[:id])
-
+    if @reservation.menu == 'カット'
+      @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+    end
   end
 
   def update
