@@ -44,6 +44,19 @@ before_action :authenticate_admin!,except: [:new_date, :new_main, :comfirm, :tha
     @reservation = Reservation.find(params[:id])
     if @reservation.menu == 'カット'
       @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+      
+    elsif @reservation.menu == 'パーマ(カット込み)' || @reservation.menu == 'カラー(カット込み)' || @reservation.menu == 'ヘナカラー(カット込み)' || @reservation.menu == '酸性カラー(カット込み)'
+      @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+      
+    elsif @reservation.menu == 'ストレート矯正(カット込み)' || @reservation.menu == 'デジタルパーマ(カット込み)'
+      @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+      
+    elsif @reservation.menu == 'パリジェンヌラッシュリフト(次世代まつ毛パーマ)'
+      @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+      
+    elsif @reservation.menu == 'トリートメント'
+      @reservation.end_date = @reservation.start_date.strftime("%H:%M")
+      
     end
   end
 
