@@ -77,6 +77,11 @@ $(function () {
                   window.location.href = "/reservations/new_main?date="+date+"&month="+month;
 
                 },
+                events: [
+                   {
+                    title: 'カラオケ',
+                    start: '2022-2-18'
+                     }],
 
             });
         }
